@@ -3,7 +3,7 @@
   <p>Find me in app/views/posts/index.html.erb</p>
 
 
-<% if @posts_today %>
+<% if @posts_today.present? %>
   <h2>Today</h2>
   <ul>
   <% @posts_today.each do |post| %>
@@ -17,7 +17,7 @@
   <% end %>
   </ul>
 <% end %>
-<% if @posts_yesterday %>
+<% if @posts_yesterday.present? %>
   <h2>Yesterday</h2>
   <ul>
   <% @posts_yesterday.each do |post| %>
@@ -31,7 +31,7 @@
   <% end %>
   </ul>
 <% end %>
-<% if @posts_older %>
+<% if @posts_older.present? %>
   <h2>Older than yesterday</h2>
   <ul>
     <% @posts_older.each do |post| %>
