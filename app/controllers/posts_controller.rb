@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @posts_today = Post.where(created_at: Date.today.all_day)
+    @posts_yesterday = Post.where(created_at: Date.yesterday.all_day)
+    @posts_older = Post.where("created_at < ?", Date.yesterday)
   end
 
   def show
