@@ -4,7 +4,11 @@
 <ul>
   <% @posts.each do |post| %>
     <li>
-      #<%= post.title %>
+      <div class="post-box">
+        <%= post.user.email%>
+        <%= post.title %>
+        <%= link_to "View Update", post_path(post) %>
+      </div>
     </li>
   <% end %>
 </ul>
