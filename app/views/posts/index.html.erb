@@ -1,6 +1,6 @@
 <div class="container">
-  <h1>Posts#index</h1>
-  <p>Find me in app/views/posts/index.html.erb</p>
+  <h1>All Posts done</h1>
+  <p>Here here you see als posts that have been done</p>
 
 
 <% if @posts_today.present? %>
@@ -9,10 +9,10 @@
   <% @posts_today.each do |post| %>
     <li>
       <div class="post-box">
-          <%= post.user.email%> has...
-          <%= post.title %>
-          <%= link_to "View Update", post_path(post) %>
-        </div>
+        <%= post.user.email%> has...
+        <%= post.title %>
+        <%= link_to "View Update", post_path(post) %>
+      </div>
     </li>
   <% end %>
   </ul>
@@ -23,10 +23,10 @@
   <% @posts_yesterday.each do |post| %>
     <li>
       <div class="post-box">
-          <%= post.user.email%> has...
-          <%= post.title %>
-          <%= link_to "View Update", post_path(post) %>
-        </div>
+        <%= post.user.email%> has...
+        <%= post.title %>
+        <%= link_to "View Update", post_path(post) %>
+      </div>
     </li>
   <% end %>
   </ul>
