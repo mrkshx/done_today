@@ -1,34 +1,48 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="container">
+  <h1>All Posts done</h1>
+  <p>Here here you see als posts that have been done</p>
 
-<% if @posts_today %>
+
+<% if @posts_today.present? %>
   <h2>Today</h2>
   <ul>
   <% @posts_today.each do |post| %>
     <li>
-      #<%= post.title %>
+      <div class="post-box">
+        <%= post.user.email%> has...
+        <%= post.title %>
+        <%= link_to "View Update", post_path(post) %>
+      </div>
     </li>
   <% end %>
   </ul>
 <% end %>
-<% if @posts_yesterday %>
+<% if @posts_yesterday.present? %>
   <h2>Yesterday</h2>
   <ul>
   <% @posts_yesterday.each do |post| %>
     <li>
-      #<%= post.title %>
+      <div class="post-box">
+        <%= post.user.email%> has...
+        <%= post.title %>
+        <%= link_to "View Update", post_path(post) %>
+      </div>
     </li>
   <% end %>
   </ul>
 <% end %>
-<% if @posts_older %>
+<% if @posts_older.present? %>
   <h2>Older than yesterday</h2>
   <ul>
     <% @posts_older.each do |post| %>
       <li>
-        #<%= post.title %>
+        <div class="post-box">
+          <%= post.user.email%> has...
+          <%= post.title %>
+          <%= link_to "View Update", post_path(post) %>
+        </div>
       </li>
-    <% end %>
+  <% end %>
   </ul>
 <% end %>
 
