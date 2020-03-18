@@ -4,7 +4,7 @@
 <%= simple_form_for [@post] do |f| %>
   <%= f.input :title %>
   <%= f.input :content %>
-  <%= f.input :tags, collection: @tags %>
+  <%= f.input :tags, collection: @tags, input_html: { multiple: true } %>
   <%= f.submit "add a post", class: "btn btn-primary" %>
 <% end %>
 
