@@ -6,3 +6,12 @@
   display: flex;
   justify-content: space-between;
 }
+
+.tag-box {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: fit-content;
+  margin-left: auto;
+}

@@ -13,6 +13,11 @@
         <%= post.title %>
         <%= link_to "View Update", post_path(post) %>
       </div>
+      <div class="tag-box">
+        <% post.tags.each do |tag|%>
+          #<%= tag.name %>
+        <% end %>
+      </div>
     </li>
   <% end %>
   </ul>
@@ -26,6 +31,11 @@
         <%= post.user.email%> has...
         <%= post.title %>
         <%= link_to "View Update", post_path(post) %>
+      </div>
+      <div class="tag-box">
+        <% post.tags.each do |tag|%>
+          #<%= tag.name %>
+        <% end %>
       </div>
     </li>
   <% end %>
@@ -41,8 +51,12 @@
           <%= post.title %>
           <%= link_to "View Update", post_path(post) %>
         </div>
+        <div class="tag-box">
+        <% post.tags.each do |tag|%>
+          #<%= tag.name %>
+        <% end %>
+      </div>
       </li>
   <% end %>
   </ul>
 <% end %>
-<%= raise %>
