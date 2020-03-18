@@ -17,6 +17,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    params[:post][:tags].drop(1).each do |id|
+      @post.tags << Tag.find(id)
+    end
     @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path
@@ -26,6 +29,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :tag_id, :user_id)
+    params.require(:post).permit(:title, :content, :user_id, :tags)
   end
 end
