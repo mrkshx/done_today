@@ -1,14 +1,34 @@
 <h1>Posts#index</h1>
 <p>Find me in app/views/posts/index.html.erb</p>
 
-<%= @posts_today %>
-<%= @posts_yesterday %>
-<%= raise %>
-<ul>
-  <% @posts.each do |post| %>
+<% if @posts_today %>
+  <h2>Today</h2>
+  <ul>
+  <% @posts_today.each do |post| %>
     <li>
       #<%= post.title %>
     </li>
   <% end %>
-</ul>
+  </ul>
+<% end %>
+<% if @posts_yesterday %>
+  <h2>Yesterday</h2>
+  <ul>
+  <% @posts_yesterday.each do |post| %>
+    <li>
+      #<%= post.title %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+<% if @posts_older %>
+  <h2>Older than yesterday</h2>
+  <ul>
+    <% @posts_older.each do |post| %>
+      <li>
+        #<%= post.title %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 
